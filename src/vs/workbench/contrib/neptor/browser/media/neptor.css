@@ -1,0 +1,238 @@
+/*--------------------------------------------------------------------------------------
+ *  Copyright 2025 Neptor AI All rights reserved.
+ *  Licensed under the Apache License, Version 2.0. See LICENSE.txt for more information.
+ *--------------------------------------------------------------------------------------*/
+
+/* Subtle PM-aligned hero glow (no grid; only a faint top tint to avoid muddying surfaces) */
+.monaco-workbench {
+	background-color: #0A0A0A;
+	background-image: radial-gradient(ellipse 90% 40% at 50% -25%, rgba(255, 59, 48, 0.10) 0%, transparent 60%);
+	background-attachment: fixed;
+}
+.vs .monaco-workbench {
+	background-color: #FFFFFF;
+	background-image: radial-gradient(ellipse 90% 40% at 50% -25%, rgba(255, 149, 0, 0.10) 0%, transparent 60%);
+}
+
+.monaco-editor .neptor-sweepIdxBG {
+	background-color: var(--vscode-neptor-sweepIdxBG);
+}
+
+.neptor-sweepBG {
+	background-color: var(--vscode-neptor-sweepBG);
+}
+
+.neptor-highlightBG {
+	background-color: var(--vscode-neptor-highlightBG);
+}
+
+.neptor-greenBG {
+	background-color: var(--vscode-neptor-greenBG);
+}
+
+.neptor-redBG {
+	background-color: var(--vscode-neptor-redBG);
+}
+
+
+/* Renamed from neptor-watermark-button to neptor-openfolder-button */
+.neptor-openfolder-button {
+    padding: 8px 20px;
+    background-color: #306dce;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    outline: none !important;
+	box-shadow: none !important;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+.neptor-openfolder-button:hover {
+    background-color: #2563eb;
+}
+.neptor-openfolder-button:active {
+    background-color: #2563eb;
+}
+
+/* Added for Open SSH button with slightly darker color */
+.neptor-openssh-button {
+    padding: 8px 20px;
+    background-color: #656565; /* Slightly darker than the #5a5a5a in the TS file */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    outline: none !important;
+	box-shadow: none !important;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.neptor-openssh-button:hover {
+    background-color: #474747; /* Darker on hover */
+}
+.neptor-openssh-button:active {
+    background-color: #474747;
+}
+
+
+.neptor-settings-watermark-button {
+	margin: 8px 0;
+	padding: 8px 20px;
+	background-color: var(--vscode-input-background);
+	color: var(--vscode-input-foreground);
+	border: none;
+	border-radius: 4px;
+	outline: none !important;
+	box-shadow: none !important;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.neptor-settings-watermark-button:hover {
+	filter: brightness(1.1);
+}
+
+.neptor-settings-watermark-button:active {
+	filter: brightness(1.1);
+}
+
+.neptor-link {
+	color: #3b82f6;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.neptor-link:hover {
+	opacity: 80%;
+}
+
+/* styles for all Neptor UI containers */
+.neptor-scope {
+	/* Define CSS variables with fallbacks for when VS Code variables aren't available */
+	--neptor-bg-1: var(--vscode-neptor-surfaceOverlay, var(--vscode-input-background, #3c3c3c));
+	--neptor-bg-1-alt: var(--vscode-badge-background, #4d4d4d);
+	--neptor-bg-2: var(--vscode-neptor-surfaceSecondary, var(--vscode-sideBar-background, #252526));
+	--neptor-bg-3: var(--vscode-neptor-surfacePrimary, var(--vscode-editor-background, #1e1e1e));
+	
+	--neptor-fg-1: var(--vscode-neptor-textPrimary, var(--vscode-editor-foreground, #cccccc));
+	--neptor-fg-2: var(--vscode-neptor-textSecondary, var(--vscode-input-foreground, #cccccc));
+	--neptor-fg-3: var(--vscode-neptor-textMuted, var(--vscode-input-placeholderForeground, #a0a0a0));
+	--neptor-fg-4: var(--vscode-neptor-textMuted, var(--vscode-list-deemphasizedForeground, #8c8c8c));
+	
+	--neptor-border-1: var(--vscode-neptor-borderStrong, var(--vscode-commandCenter-activeBorder, #555555));
+	--neptor-border-2: var(--vscode-neptor-borderSubtle, var(--vscode-commandCenter-border, #454545));
+	--neptor-border-3: var(--vscode-neptor-borderSubtle, var(--vscode-commandCenter-inactiveBorder, #383838));
+	--neptor-border-4: var(--vscode-editorGroup-border, #444444);
+	
+	/* Accent colors */
+	--neptor-accent-primary: var(--vscode-neptor-accentPrimary, #FF3B30);
+	--neptor-accent-primary-hover: #E63E22;
+	--neptor-accent-primary-light: rgba(255, 59, 48, 0.15);
+	--neptor-accent-primary-muted: rgba(255, 59, 48, 0.25);
+	
+	/* Scrollbar settings */
+	--scrollbar-vertical-width: 8px;
+	--scrollbar-horizontal-height: 6px;
+}
+
+/* Target both neptor-scope and all its descendants with scrollbars */
+.neptor-scope,
+.neptor-scope * {
+	scrollbar-width: thin !important;
+	scrollbar-color: var(--neptor-bg-1) var(--neptor-bg-3) !important;
+	/* For Firefox */
+}
+
+.neptor-scope::-webkit-scrollbar,
+.neptor-scope *::-webkit-scrollbar {
+	width: var(--scrollbar-vertical-width) !important;
+	height: var(--scrollbar-horizontal-height) !important;
+	background-color: var(--neptor-bg-3) !important;
+}
+
+.neptor-scope::-webkit-scrollbar-thumb,
+.neptor-scope *::-webkit-scrollbar-thumb {
+	background-color: var(--neptor-bg-1) !important;
+	border-radius: 4px !important;
+	border: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.neptor-scope::-webkit-scrollbar-thumb:hover,
+.neptor-scope *::-webkit-scrollbar-thumb:hover {
+	background-color: var(--neptor-bg-1) !important;
+	filter: brightness(1.1) !important;
+}
+
+.neptor-scope::-webkit-scrollbar-thumb:active,
+.neptor-scope *::-webkit-scrollbar-thumb:active {
+	background-color: var(--neptor-bg-1) !important;
+	filter: brightness(1.2) !important;
+}
+
+.neptor-scope::-webkit-scrollbar-track,
+.neptor-scope *::-webkit-scrollbar-track {
+	background-color: var(--neptor-bg-3) !important;
+	border: none !important;
+}
+
+.neptor-scope::-webkit-scrollbar-corner,
+.neptor-scope *::-webkit-scrollbar-corner {
+	background-color: var(--neptor-bg-3) !important;
+}
+
+/* Add neptor-scrollable-element styles to match */
+.neptor-scrollable-element {
+	background-color: var(--vscode-editor-background);
+	--scrollbar-vertical-width: 14px;
+	--scrollbar-horizontal-height: 6px;
+	overflow: auto;
+	/* Ensure scrollbars are shown when needed */
+}
+
+.neptor-scrollable-element,
+.neptor-scrollable-element * {
+	scrollbar-width: thin !important;
+	/* For Firefox */
+	scrollbar-color: var(--neptor-bg-1) var(--neptor-bg-3) !important;
+	/* For Firefox */
+}
+
+.neptor-scrollable-element::-webkit-scrollbar,
+.neptor-scrollable-element *::-webkit-scrollbar {
+	width: var(--scrollbar-vertical-width) !important;
+	height: var(--scrollbar-horizontal-height) !important;
+	background-color: var(--neptor-bg-3) !important;
+}
+
+.neptor-scrollable-element::-webkit-scrollbar-thumb,
+.neptor-scrollable-element *::-webkit-scrollbar-thumb {
+	background-color: var(--neptor-bg-1) !important;
+	border-radius: 4px !important;
+	border: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.neptor-scrollable-element::-webkit-scrollbar-thumb:hover,
+.neptor-scrollable-element *::-webkit-scrollbar-thumb:hover {
+	background-color: var(--neptor-bg-1) !important;
+	filter: brightness(1.1) !important;
+}
+
+.neptor-scrollable-element::-webkit-scrollbar-thumb:active,
+.neptor-scrollable-element *::-webkit-scrollbar-thumb:active {
+	background-color: var(--neptor-bg-1) !important;
+	filter: brightness(1.2) !important;
+}
+
+.neptor-scrollable-element::-webkit-scrollbar-track,
+.neptor-scrollable-element *::-webkit-scrollbar-track {
+	background-color: var(--neptor-bg-3) !important;
+	border: none !important;
+}
+
+.neptor-scrollable-element::-webkit-scrollbar-corner,
+.neptor-scrollable-element *::-webkit-scrollbar-corner {
+	background-color: var(--neptor-bg-3) !important;
+}
