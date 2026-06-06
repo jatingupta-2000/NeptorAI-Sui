@@ -1,0 +1,21 @@
+{
+	"name": "neptor-org-api",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"description": "Neptor organization API (Supabase + Walrus Memory): team rules, activity, org sync",
+	"scripts": {
+		"start": "node --env-file=.env server.mjs",
+		"dev": "node --env-file=.env --watch server.mjs",
+		"reset-rules": "node scripts/resetRules.mjs",
+		"inspect-memwal": "node scripts/inspectMemWal.mjs"
+	},
+	"dependencies": {
+		"@mysten-incubation/memwal": "^0.0.7",
+		"@mysten/seal": "^1.2.1",
+		"@mysten/sui": "^2.19.0",
+		"@supabase/supabase-js": "^2.49.1",
+		"npm": "^11.17.0",
+		"start": "^5.1.0"
+	}
+}
