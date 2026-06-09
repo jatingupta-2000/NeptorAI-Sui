@@ -1,0 +1,16 @@
+{
+	"name": "neptor-invite-api",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"description": "Local AWS SES invite endpoint for Neptor organization invites",
+	"scripts": {
+		"start": "node server.mjs",
+		"dev": "node --watch server.mjs"
+	},
+	"dependencies": {
+		"@aws-sdk/client-ses": "^3.758.0",
+		"npm": "^11.17.0",
+		"start": "^5.1.0"
+	}
+}
