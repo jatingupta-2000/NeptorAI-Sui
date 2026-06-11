@@ -1,0 +1,12 @@
+{
+  "name": "neptor-dashboard-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Standalone Neptor Workspace Intelligence portal",
+  "scripts": {
+    "start": "node backend/server.mjs",
+    "dev": "node --watch backend/server.mjs"
+  },
+  "dependencies": {}
+}
