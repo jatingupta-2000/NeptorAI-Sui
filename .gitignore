@@ -46,3 +46,24 @@ src/vs/workbench/contrib/neptor/browser/react/src2/**
 .env.*
 !.env.example
 .neptor/
+
+# Kept local only (excluded from GitHub upload)
+SUBMISSION.md
+LICENSE.txt
+build/checksums/
+build/monaco/version.txt
+extensions/github/testWorkspace/
+extensions/markdown-language-features/test-workspace/
+extensions/vscode-api-tests/testWorkspace/
+extensions/vscode-api-tests/testWorkspace2/
+extensions/vscode-colorize-tests/test/colorize-fixtures/
+extensions/terminal-suggest/fixtures/shell-parser/**/output.txt
+src/vs/base/test/node/uri.*.data.txt
+src/vs/editor/contrib/snippet/browser/snippet.md
+src/vs/editor/test/node/diffing/fixtures/
+src/vs/platform/checksum/test/node/fixtures/
+src/vs/platform/files/test/node/fixtures/
+src/vs/workbench/services/keybinding/test/node/*.txt
+src/vs/workbench/services/search/test/node/fixtures/
+src/vs/workbench/services/search/test/node/fixtures2/
+src/vs/workbench/services/textfile/test/node/encoding/fixtures/
